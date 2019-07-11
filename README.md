@@ -9,6 +9,7 @@ Capacityset provides a set with a maximum size.
 [![Go Report Card](https://goreportcard.com/badge/github.com/xmidt-org/capacityset)](https://goreportcard.com/report/github.com/xmidt-org/capacityset)
 [![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](https://github.com/xmidt-org/capacityset/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/xmidt-org/capacityset.svg)](CHANGELOG.md)
+[![GoDoc](https://godoc.org/github.com/xmidt-org/capacityset?status.svg)](https://godoc.org/github.com/xmidt-org/capacityset)
 
 ## Summary
 
