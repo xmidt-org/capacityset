@@ -16,8 +16,6 @@ Capacityset provides a set with a maximum size.
 Capacityset implements a set (unordered, non-repeating) that cannot exceed a 
 provisioned size.
 
-## The Pieces
-
 ## Install
 This repo is a packages.  There is no installation.
 
