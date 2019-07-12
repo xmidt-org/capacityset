@@ -20,7 +20,7 @@ package capacityset
 import (
 	"sync"
 
-	"github.com/Comcast/webpa-common/semaphore"
+	"github.com/xmidt-org/webpa-common/semaphore"
 )
 
 // Set is the interface of the common set storage pattern
