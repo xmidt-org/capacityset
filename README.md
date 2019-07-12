@@ -17,7 +17,7 @@ Capacityset implements a set (unordered, non-repeating) that cannot exceed a
 provisioned size.
 
 ## Install
-This repo is a packages.  There is no installation.
+This repo is a package.  There is no installation.
 
 ## Contributing
 Refer to [CONTRIBUTING.md](CONTRIBUTING.md).
