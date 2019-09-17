@@ -1,7 +1,5 @@
 # capacityset
 
-Capacityset provides a set with a maximum size.
-
 [![Build Status](https://travis-ci.com/xmidt-org/capacityset.svg?branch=master)](https://travis-ci.com/xmidt-org/capacityset)
 [![codecov.io](http://codecov.io/github/xmidt-org/capacityset/coverage.svg?branch=master)](http://codecov.io/github/xmidt-org/capacityset?branch=master)
 [![Code Climate](https://codeclimate.com/github/xmidt-org/capacityset/badges/gpa.svg)](https://codeclimate.com/github/xmidt-org/capacityset)
