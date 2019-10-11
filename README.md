@@ -44,14 +44,24 @@ fmt.Println(s.Pop()) // either banana, peach or apple
 fmt.Println(s.Size()) // prints 2
 ```
 
-If you try to add an element to a Set and exceed the Set's capacity, the `Add` function will panic:
+The Set implementation is designed to work concurrently from multiple Goroutines. Therefore, if you try to add an element
+to a full Set, the Add function will block as long as the Set is full:
 ```go
 s := capacityset.NewCapacitySet(3)
 s.Add("banana") // true
 s.Add("peach") // true
 s.Add("apple") // true
-s.Add("coconut") // would panic because it exceeds the Set's capacity
+go func() {
+    time.Sleep(time.Second*3) // simulates work until the Pop function is called
+    s.Pop() // either banana, peach or apple
+}()
+before := time.Now()
+s.Add("coconut") // blocks until the set is no longer full
+fmt.Println(time.Since(before)) // would print round about "3s"
 ```
+
+Please note that if you try to add an element to a full Set within the same Goroutine, the Add function panics because
+Golang detects a deadlock.
 
 ## Contributing
 Refer to [CONTRIBUTING.md](CONTRIBUTING.md).
