@@ -14,6 +14,18 @@
 Capacityset implements a set (unordered, non-repeating) that cannot exceed a 
 provisioned size.
 
+## Table of Contents
+
+- [Code of Conduct](#code-of-conduct)
+- [Install](#install)
+- [Examples](#examples)
+- [Contributing](#contributing)
+
+## Code of Conduct
+
+This project and everyone participating in it are governed by the [XMiDT Code Of Conduct](https://xmidt.io/code_of_conduct/). 
+By participating, you agree to this Code.
+
 ## Install
 This repo is a package. To install it, just run the `go get` command from your command line:
 ```sh
