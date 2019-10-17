@@ -53,6 +53,9 @@ type limitedSet struct {
 	data map[interface{}]bool
 }
 
+// Add attempts to add the item to the limited set.  It's possible for the item
+// to not be inserted but also for no error to be returned (it's already in the
+// set).
 func (set *limitedSet) Add(ctx context.Context, item interface{}) (bool, error) {
 	err := set.limit.AcquireCtx(ctx)
 	if err != nil {
@@ -68,6 +71,7 @@ func (set *limitedSet) Add(ctx context.Context, item interface{}) (bool, error) 
 	return true, nil
 }
 
+// Pop returns an item from the set and removes it from the set.
 func (set *limitedSet) Pop() interface{} {
 	set.Lock()
 	defer func() {
@@ -82,6 +86,7 @@ func (set *limitedSet) Pop() interface{} {
 	return nil
 }
 
+// Size returns the current size in the limited set.
 func (set *limitedSet) Size() int {
 	set.RLock()
 	defer set.RUnlock()
