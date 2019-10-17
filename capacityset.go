@@ -18,8 +18,10 @@
 package capacityset
 
 import (
+	"context"
 	"sync"
 
+	"github.com/goph/emperror"
 	"github.com/xmidt-org/webpa-common/semaphore"
 )
 
@@ -27,7 +29,7 @@ import (
 type Set interface {
 	// Adds an element to the set. Returns whether
 	// the item was added.
-	Add(item interface{}) bool
+	Add(ctx context.Context, item interface{}) (bool, error)
 
 	// Pop returns an item from the set
 	Pop() interface{}
@@ -51,16 +53,19 @@ type limitedSet struct {
 	data map[interface{}]bool
 }
 
-func (set *limitedSet) Add(item interface{}) bool {
-	set.limit.Acquire()
+func (set *limitedSet) Add(ctx context.Context, item interface{}) (bool, error) {
+	err := set.limit.AcquireCtx(ctx)
+	if err != nil {
+		return false, emperror.WrapWith(err, "failed to add item to the set", "item", item)
+	}
 	set.Lock()
 	defer set.Unlock()
 
 	if set.data[item] {
-		return false //False if it existed already
+		return false, nil //False if it existed already
 	}
 	set.data[item] = true
-	return true
+	return true, nil
 }
 
 func (set *limitedSet) Pop() interface{} {
