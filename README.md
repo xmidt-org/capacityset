@@ -1,5 +1,13 @@
 # capacityset
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+## Archived
+
+This project has been archived.  No future work will be done here.
+
+-------------
+
 [![Build Status](https://travis-ci.com/xmidt-org/capacityset.svg?branch=main)](https://travis-ci.com/xmidt-org/capacityset)
 [![codecov.io](http://codecov.io/github/xmidt-org/capacityset/coverage.svg?branch=main)](http://codecov.io/github/xmidt-org/capacityset?branch=main)
 [![Code Climate](https://codeclimate.com/github/xmidt-org/capacityset/badges/gpa.svg)](https://codeclimate.com/github/xmidt-org/capacityset)
